@@ -169,7 +169,7 @@ export default function Home() {
           autoPlay
           controls
           loop
-          className="opacity-0"
+          className="opacity-80"
         >
           Your browser does not support the audio element.
         </audio>
