@@ -13,7 +13,7 @@ const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     // Send logic here (email service, backend, etc.)
-    
+
     const fingerprint = {
       userAgent: navigator.userAgent,
       language: navigator.language,
@@ -49,20 +49,23 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-gray-800 text-white max-w-md my-5 p-6 rounded-xl border-2 border-white space-y-4 shadow-lg"
+      className="bg-black text-white max-w-md my-5 p-6 rounded-xl border-2 border-white space-y-4 shadow-lg"
     >
-      <h2 className="text-3xl font-bold text-yellow-300 tracking-wider">
+      <h2 className="text-3xl font-bold text-[var(--green-100)] tracking-wider">
         Contact Me
       </h2>
 
       <div>
-        <label className="block mb-1 text-yellow-100">Topic</label>
+        <label className="block mb-1 text-[var(--green-200)] text-lg">
+          Topic
+        </label>
         <select
           value={topic}
           onChange={(e) => setTopic(e.target.value)}
-          className="w-full px-3 py-2 bg-gray-900 border border-white rounded text-xl"
+          className="w-full px-4 py-2 border border-white rounded-lg text-xl bg-black"
         >
           <option value="General">General</option>
+          <option value="Request">Request</option>
           <option value="Collaboration">Collaboration</option>
           <option value="Feedback">Feedback</option>
           <option value="Bug Report">Bug Report</option>
@@ -70,24 +73,28 @@ const ContactForm = () => {
       </div>
 
       <div>
-        <label className="block mb-1 text-yellow-100">Email</label>
+        <label className="block mb-1 text-[var(--green-200)] text-lg">
+          Email
+        </label>
         <input
           type="email"
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full px-3 py-2 bg-gray-900 border border-white rounded text-xl"
+          className="w-full px-3 py-2 border border-white rounded-lg text-xl"
           placeholder="you@example.com"
         />
       </div>
 
       <div>
-        <label className="block mb-1 text-yellow-100">Message</label>
+        <label className="block mb-1 text-[var(--green-200)] text-lg">
+          Message
+        </label>
         <textarea
           required
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="w-full px-3 py-2 bg-gray-900 border border-white rounded h-32 text-xl"
+          className="w-full px-3 py-2 border border-white rounded-lg h-32 text-xl"
           placeholder="Your message here..."
         />
       </div>
@@ -95,8 +102,8 @@ const ContactForm = () => {
       <Button
         type="submit"
         className={`${
-          sent ? "bg-yellow-400 disabled" : "bg-yellow-300"
-        } text-black hover:bg-yellow-400`}
+          sent ? "bg-[var(--green-200)] disabled" : "bg-[var(--green-100)]"
+        } text-black hover:bg-[var(--green-200)] cursor-pointer`}
       >
         Send Message
       </Button>

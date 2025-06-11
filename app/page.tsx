@@ -48,9 +48,9 @@ export default function Home() {
 
   return (
     <div className="relative w-full min-h-screen">
-      <main className="flex min-h-screen flex-col items-center justify-between px-24 py-5 bg-[url('/images/8351332.gif')] w-full bg-cover bg-no-repeat">
+      <main className="flex min-h-screen flex-col items-center justify-between sm:px-12 px-2 py-12 w-full bg-black">
         <Snow />
-        <div className="w-full border-2 border-white bg-gray-9002 backdrop-blur-md rounded-lg px-12 pt-0 z-9 py-5">
+        <div className="w-full border-2 border-white bg-gray-9002 backdrop-blur-md rounded-lg sm:p-8 p-2 z-9">
           {/* Header */}
           <div
             className={`${jersey25.className} w-full text-white flex gap-5 items-center`}
@@ -78,7 +78,7 @@ export default function Home() {
                       } relative inline-flex size-4 rounded-full top-2 right-[4px]`}
                     />
                   </span>
-                  <div className="group-hover:opacity-100 opacity-0 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 transition-all duration-300 bg-indigo-500 py-2 px-4 text-center rounded-full pointer-events-none">
+                  <div className="group-hover:opacity-100 opacity-0 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 transition-all duration-300 bg-black py-2 px-4 text-center rounded-full pointer-events-none">
                     <p
                       className={`${
                         statusText === "online"
@@ -116,7 +116,9 @@ export default function Home() {
                       className="rounded-lg"
                     />
                   </span>
-                  <p className="text-gray-400">Game + Web Developer</p>
+                  <p className="text-[var(--green-100)]">
+                    Game + Web Developer
+                  </p>
                 </div>
               </div>
             </div>
@@ -124,21 +126,19 @@ export default function Home() {
 
           {/* Tabs */}
           <div
-            className={`${jersey20.className} text-white my-5 text-2xl flex gap-5 bg-gray-800 w-fit px-5 rounded-t-md py-3 border-2 border-white`}
+            className={`${jersey20.className} text-white my-5 text-2xl flex sm:flex-row flex-col gap-5 bg-black sm:w-fit w-full px-5 rounded-t-md py-3 border-2 border-white`}
           >
-            {["about", "projects", "activity", "news", "contact"].map(
-              (_tab) => (
-                <p
-                  key={_tab}
-                  onClick={() => setActiveTab(_tab)}
-                  className={`${
-                    activeTab === _tab ? "text-yellow-300" : ""
-                  } h-12 w-1/5 cursor-pointer`}
-                >
-                  {_tab}
-                </p>
-              )
-            )}
+            {["about", "projects", "news", "contact"].map((_tab) => (
+              <p
+                key={_tab}
+                onClick={() => setActiveTab(_tab)}
+                className={`${
+                  activeTab === _tab ? "text-[var(--green-100)]" : ""
+                } sm:h-12 h-fit w-1/4 cursor-pointer`}
+              >
+                {_tab}
+              </p>
+            ))}
           </div>
 
           {/* Tab Content */}
@@ -151,29 +151,6 @@ export default function Home() {
           </div>
 
           {/* Extras */}
-          <Image
-            src="/images/car.png"
-            width={100}
-            height={100}
-            alt="Profile"
-            className="rounded-lg"
-          />
-          <span className="flex gap-2 items-center">
-            <Image
-              src="/images/16x16/Item__00.png"
-              width={25}
-              height={25}
-              alt="Sword"
-              className="rounded-lg"
-            />
-          </span>
-          <audio
-            src="/sounds/drowning.m4a"
-            autoPlay
-            controls
-            loop
-            className="opacity-80"
-          />
         </div>
       </main>
       {/* Splash Screen Overlay */}
