@@ -173,7 +173,7 @@ const About = () => {
       {/* <Button
         onClick={() => router.push("/admin")}
         className="my-5 bg-[var(--green-100)]"
-      >
+      > //
         Admin Settings
         <span className="text-red-500">* </span>
       </Button> */}
